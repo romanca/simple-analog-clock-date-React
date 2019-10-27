@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Circle from "./components/Circle"
+import Clock from "./components/Clock"
 import CurrentDate from './components/CurrentDate';
 
  
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-         <Circle/>
+         <Clock/>
          <CurrentDate/>
       </div>
     );
