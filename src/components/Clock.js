@@ -16,29 +16,28 @@ export default class Clock extends Component {
         };
       }
 
-      componentDidMount() {
+    componentDidMount() {
         this.clockInterval = setInterval( this.handleDate, 1000);
       }
+
+    handleDate =()=> {
+        const date = new Date();
+        let hours =  date.getHours();
+        let minutes = date.getMinutes();
+        let seconds =  date.getSeconds();
+        this.setState({ hours, minutes, seconds });
+      }
     
-
-
-
     render(){
-       
-      const { hours, minutes, seconds } = this.state;
-    
-      const secondsStyle = {
-        transform: `rotate(${seconds * 6}deg)`
-      };
-      const minutesStyle = {
-        transform: `rotate(${minutes * 6}deg)`
-      };
-      const hoursStyle = {
-        transform: `rotate(${hours * 30}deg)`
-      };
+       const { hours, minutes, seconds } = this.state;
+       const secondsStyle = {
+        transform: `rotate(${seconds * 6}deg)`};
+       const minutesStyle = {
+        transform: `rotate(${minutes * 6}deg)`};
+       const hoursStyle = {
+        transform: `rotate(${hours * 30}deg)`};
       
-
-        return(
+      return(
             <section>
               <div className="hourhand" style={hoursStyle} ></div>
               <div className="secondhand" style={secondsStyle} ></div>
@@ -54,11 +53,4 @@ export default class Clock extends Component {
             </section>
         )
       }
-      handleDate =()=> {
-        const date = new Date();
-        let hours =  date.getHours();
-        let minutes = date.getMinutes();
-        let seconds =  date.getSeconds();
-        this.setState({ hours, minutes, seconds });
-      }
-}
+    }
