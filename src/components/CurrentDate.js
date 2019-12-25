@@ -3,16 +3,12 @@ import React,{Component} from "react"
 
 export default class CurrentDate extends Component{
     
-    constructor(){
-        super()
-        
-        this.state={
-            day:"",
-            month:"",
-            year:"",
-            date:"",
-      }
-    }
+  state = {
+    day:"",
+    month:"",
+    year:"",
+    date:"",
+}
 
     componentWillMount() {
         setInterval(this.currentDate)
@@ -34,7 +30,7 @@ export default class CurrentDate extends Component{
 
       return(
         <div className="currentDate">
-            <h1>{this.state.date} {months[this.state.month]} , {this.state.year},{days[this.state.day]}</h1>
+            <h1>{this.state.date} {days[this.state.day]}  {months[this.state.month]} {this.state.year}</h1>
         </div>
       )
     }
