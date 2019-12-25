@@ -10,8 +10,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d simple-analog-clock-date-React",
-    "test": "react-scripts test",
+    "deploy": "gh-pages -d src",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
